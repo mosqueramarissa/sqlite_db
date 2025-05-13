@@ -91,18 +91,21 @@ columnas_a_purgar_2 <- c("PUNTOS_CRIBAJE_M",
 
 na_porcentajes_2018_2 <- sapply(df_2018[, columnas_a_purgar_2, drop=FALSE], 
                               function(x) mean(is.na(x))*100)
+print(na_porcentajes_2018_2)
 na_porcentajes_2019_2 <- sapply(df_2019[, columnas_a_purgar_2, drop=FALSE], 
                               function(x) mean(is.na(x))*100)
+print(na_porcentajes_2019_2)
 na_porcentajes_2022_2 <- sapply(df_2022[, columnas_a_purgar_2, drop=FALSE], 
                               function(x) mean(is.na(x))*100)
+print(na_porcentajes_2022_2)
 
-columnas_vacias_en_mas_del_50_2018_2 <- names(na_porcentajes_2018_2[na_porcentajes_2018_2 > 50])
-columnas_vacias_en_mas_del_50_2019_2 <- names(na_porcentajes_2019_2[na_porcentajes_2019_2 > 50])
-columnas_vacias_en_mas_del_50_2022_2 <- names(na_porcentajes_2022_2[na_porcentajes_2022_2 > 50])
+columnas_vacias_en_mas_del_30_2018 <- names(na_porcentajes_2018_2[na_porcentajes_2018_2 > 30])
+columnas_vacias_en_mas_del_30_2019 <- names(na_porcentajes_2019_2[na_porcentajes_2019_2 > 30])
+columnas_vacias_en_mas_del_30_2022 <- names(na_porcentajes_2022_2[na_porcentajes_2022_2 > 30])
 
-df_2018 <- df_2018[, !(names(df_2018) %in% columnas_vacias_en_mas_del_50_2018_2)]
-df_2019 <- df_2019[, !(names(df_2019) %in% columnas_vacias_en_mas_del_50_2019_2)]
-df_2022 <- df_2022[, !(names(df_2022) %in% columnas_vacias_en_mas_del_50_2022_2)]
+df_2018 <- df_2018[, !(names(df_2018) %in% columnas_vacias_en_mas_del_30_2018)]
+df_2019 <- df_2019[, !(names(df_2019) %in% columnas_vacias_en_mas_del_30_2019)]
+df_2022 <- df_2022[, !(names(df_2022) %in% columnas_vacias_en_mas_del_30_2022)]
 
 
 
