@@ -577,7 +577,7 @@ clasificacion_diagnostico <- c("recruit_year",
 
 df_paciente <- df_variables_en_comun[!duplicated(df_variables_en_comun$ID), paciente]
 df_paciente_duplicado <- df_variables_en_comun[duplicated(df_variables_en_comun$ID), paciente_duplicado]
-df_paciente_duplicado$ID <- paste0(df_paciente_duplicado$ID, "_", df_paciente_duplicado$recruit_year)
+df_paciente_duplicado$ID <- paste0(df_paciente_duplicado$ID, "_")
 df_informacion_recruit <- df_variables_en_comun[, informacion_recruit]
 df_datos_antropometricos <- df_variables_en_comun[, datos_antropometricos]
 df_laboratorio <- df_variables_en_comun[, laboratorio]
